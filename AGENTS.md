@@ -8,7 +8,8 @@ Personal bilingual (FA/EN) portfolio. Built in phases; stop at every checkpoint 
 - `next.config.ts`: `output: 'export'`, `basePath: '/portfolio'`, `trailingSlash: true`, `images.unoptimized: true`.
 - The base path / site URL live **only** in `src/config/site.ts` (`BASE_PATH`, `SITE_URL`).
   Every raw asset path, OG image, sitemap, canonical and hreflang URL reads from there.
-  Never hard-code `/portfolio` anywhere else. (`next/link`, `next/image` and `next/font` add it automatically.)
+  Never hard-code `/portfolio` anywhere else. (`next/link`, `next/font` and statically imported `next/image` sources add it automatically;
+  a string `src` does not — images live in `src/assets/` and are imported.)
 
 ## Mindset
 

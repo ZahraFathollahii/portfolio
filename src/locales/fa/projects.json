@@ -6,7 +6,8 @@
     "role": "نقش من",
     "status": "وضعیت",
     "stack": "فناوری‌ها",
-    "privateSource": "کد منبع خصوصی است"
+    "privateSource": "کد منبع خصوصی است",
+    "projectNavigation": "پیمایش پروژه‌ها"
   },
   "caseStudy": {
     "context": "زمینه",

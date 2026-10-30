@@ -6,7 +6,8 @@
     "role": "My role",
     "status": "Status",
     "stack": "Tech stack",
-    "privateSource": "Source code is private"
+    "privateSource": "Source code is private",
+    "projectNavigation": "Project navigation"
   },
   "caseStudy": {
     "context": "Context",

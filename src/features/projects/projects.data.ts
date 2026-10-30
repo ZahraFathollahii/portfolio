@@ -98,14 +98,17 @@ const allProjects = [
 
 export type ProjectSlug = (typeof allProjects)[number]["slug"];
 
-export type CaseStudySlug = Extract<
-  (typeof allProjects)[number],
-  { hasCaseStudy: true }
->["slug"];
-
 type ProjectEntry = (typeof allProjects)[number];
+type CaseStudyProject = Extract<ProjectEntry, { hasCaseStudy: true }>;
+
+export type CaseStudySlug = CaseStudyProject["slug"];
 
 /** Projects that are rendered and statically generated (Ganotic is behind `SHOW_GANOTIC`). */
 export const projects: readonly ProjectEntry[] = allProjects.filter(
   (project) => SHOW_GANOTIC || project.slug !== "ganotic",
+);
+
+/** Visible projects with a case-study page, in display order (drives static params and prev/next). */
+export const caseStudyProjects: readonly CaseStudyProject[] = projects.filter(
+  (project): project is CaseStudyProject => project.hasCaseStudy,
 );

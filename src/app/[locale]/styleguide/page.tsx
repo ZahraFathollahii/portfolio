@@ -2,7 +2,8 @@
  * TEMPORARY design-system preview — delete in Phase 7.
  * Exempt from the i18n rule: sample copy below is demo data, not site content.
  */
-import { Fragment, type CSSProperties } from "react";
+import type { Metadata } from "next";
+import { Fragment } from "react";
 import { FiArrowUpRight, FiDownload, FiMail } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -17,6 +18,11 @@ import {
 } from "@/components/ui";
 import { formatNumber } from "@/lib/format";
 import { localeDir, locales, type Locale } from "@/i18n/settings";
+
+export const metadata: Metadata = {
+  title: "Styleguide",
+  robots: { index: false, follow: false },
+};
 
 export const dynamicParams = false;
 
@@ -87,28 +93,6 @@ const tokens = [
   "accent",
   "accent-contrast",
 ] as const;
-
-const accentCandidates: {
-  name: string;
-  dark: [string, string];
-  light: [string, string];
-}[] = [
-  {
-    name: "Saffron",
-    dark: ["#f2b33d", "#16181c"],
-    light: ["#8f5300", "#ffffff"],
-  },
-  {
-    name: "Persimmon",
-    dark: ["#ff7e5f", "#16181c"],
-    light: ["#b83a12", "#ffffff"],
-  },
-  {
-    name: "Firouzeh",
-    dark: ["#45c8c8", "#16181c"],
-    light: ["#0b6e73", "#ffffff"],
-  },
-];
 
 function Panel({ locale, theme }: { locale: Locale; theme: Theme }) {
   const s = sample[locale];
@@ -221,46 +205,9 @@ function Panel({ locale, theme }: { locale: Locale; theme: Theme }) {
   );
 }
 
-function AccentCandidates() {
-  return (
-    <div className="grid gap-4 md:grid-cols-3" lang="en" dir="ltr">
-      {accentCandidates.map((candidate) => (
-        <div
-          key={candidate.name}
-          className="min-w-0 overflow-hidden rounded-card border border-border"
-        >
-          {(["dark", "light"] as const).map((theme) => (
-            <div
-              key={theme}
-              data-theme={theme}
-              className="flex flex-wrap items-center gap-3 bg-bg p-4 text-text"
-              style={
-                {
-                  "--accent": candidate[theme][0],
-                  "--accent-contrast": candidate[theme][1],
-                } as CSSProperties
-              }
-            >
-              <span className="w-20 text-sm font-semibold text-accent">
-                {candidate.name}
-              </span>
-              <Button size="sm">Download CV</Button>
-              <Chip tone="accent">React</Chip>
-              <span className="ms-auto font-mono text-[10px] text-muted">
-                {candidate[theme][0]}
-              </span>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function StyleguidePage() {
   return (
     <main className="mx-auto max-w-[1600px] space-y-8 p-4 sm:p-8">
-      <AccentCandidates />
       <div className="grid gap-8 xl:grid-cols-2">
         {locales.flatMap((locale) =>
           (["dark", "light"] as const).map((theme) => (

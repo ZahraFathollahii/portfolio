@@ -33,6 +33,7 @@ Boring proven solutions. No over-engineering. Readability → scalability → pe
 - ✅ Strict `@/*` path alias. No relative imports climbing more than one level (enforced by ESLint).
 - ✅ Barrel files only at `components/ui/index.ts` and `components/layout/index.ts` — flat, no re-export chains.
 - ✅ Zero hard-coded user-facing strings: everything via `t("...")`. FA and EN key sets must match exactly (`yarn i18n:check`).
+  Keys are always full string literals (in components or `content/*`) — never built with template strings — so the unused-key check can see them.
 - ✅ Logical properties only for direction-sensitive spacing/position (`ms-/me-/ps-/pe-/start-/end-`). Full RTL/LTR parity.
 - ✅ Component-local types stay in the file; shared domain types live in `features/*/types.ts`.
 - ✅ Server Components by default; `"use client"` only where interaction requires it
@@ -62,7 +63,7 @@ Boring proven solutions. No over-engineering. Readability → scalability → pe
 - If something is unclear, ask — do not guess.
 - Self-review before a checkpoint: imports/exports, structure, typing, translations, styling/RTL, a11y.
 
-## Node scripts (`scripts/*.ts`)
+## Node scripts (`scripts/*.mts`)
 
 Run directly with Node 24's native type stripping (no `tsx`). Erasable TypeScript syntax only:
 no `@/` alias, no `enum`/`namespace`/parameter properties, relative imports with explicit `.ts` extensions.
@@ -71,4 +72,4 @@ Node version is pinned in `.nvmrc` and `engines`.
 ## Commands
 
 - `yarn dev` · `yarn build` (static output in `out/`) · `yarn lint` · `yarn typecheck`
-- `yarn format` / `yarn format:check` · `yarn test`
+- `yarn format` / `yarn format:check` · `yarn test` · `yarn i18n:check`

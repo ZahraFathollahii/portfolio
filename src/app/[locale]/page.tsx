@@ -1,27 +1,26 @@
 import { SectionRail } from "@/components/layout";
-import { Container, Heading, Section } from "@/components/ui";
-import { homeSections } from "@/config/navigation";
-import { getT } from "@/i18n/getT";
+import { About } from "@/features/home/sections/About";
+import { Contact } from "@/features/home/sections/Contact";
+import { Experience } from "@/features/home/sections/Experience";
+import { Hero } from "@/features/home/sections/Hero";
+import { Research } from "@/features/home/sections/Research";
+import { SelectedWork } from "@/features/home/sections/SelectedWork";
+import { Skills } from "@/features/home/sections/Skills";
 import { assertLocale } from "@/i18n/settings";
 
-// Phase 2 skeleton: real sections arrive in Phase 4. Empty bodies give the rail something to track.
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const locale = assertLocale((await params).locale);
-  const t = await getT(locale, "common");
 
   return (
     <>
       <SectionRail />
-      <Container className="py-24">
-        <Heading level={1} accentDot>
-          {t("site.name")}
-        </Heading>
-      </Container>
-      {homeSections.map((section) => (
-        <Section key={section.id} id={section.id} title={t(section.labelKey)}>
-          <div className="min-h-[50vh] rounded-card border border-dashed border-border" />
-        </Section>
-      ))}
+      <Hero locale={locale} />
+      <About locale={locale} />
+      <Skills locale={locale} />
+      <SelectedWork locale={locale} />
+      <Experience locale={locale} />
+      <Research locale={locale} />
+      <Contact locale={locale} />
     </>
   );
 }

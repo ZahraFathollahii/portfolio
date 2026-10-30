@@ -35,7 +35,7 @@ export const clientNamespaces = [
 
 export type ClientNamespace = (typeof clientNamespaces)[number];
 
-export function isLocale(value: string): value is Locale {
+function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 

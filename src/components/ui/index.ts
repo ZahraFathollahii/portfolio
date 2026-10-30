@@ -1,4 +1,4 @@
-export { Button, ButtonLink } from "@/components/ui/Button";
+export { ButtonLink } from "@/components/ui/Button";
 export { Card } from "@/components/ui/Card";
 export { Chip } from "@/components/ui/Chip";
 export { Container } from "@/components/ui/Container";

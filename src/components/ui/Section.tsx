@@ -8,20 +8,12 @@ import { cn } from "@/lib/cn";
 type SectionProps = {
   id: string;
   title: string;
-  /** Small label above the title. */
-  eyebrow?: string;
   className?: string;
   children: ReactNode;
 };
 
 /** Every section reveals on scroll, so the effect is applied here once. */
-export function Section({
-  id,
-  title,
-  eyebrow,
-  className,
-  children,
-}: SectionProps) {
+export function Section({ id, title, className, children }: SectionProps) {
   const titleId = `${id}-title`;
 
   return (
@@ -32,9 +24,6 @@ export function Section({
     >
       <Container>
         <Reveal>
-          {eyebrow && (
-            <p className="mb-3 text-sm font-medium text-accent">{eyebrow}</p>
-          )}
           <Heading level={2} id={titleId}>
             {title}
           </Heading>

@@ -1,45 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { FiArrowRight } from "react-icons/fi";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 
-import { Button, ButtonLink } from "@/components/ui/Button";
-
-describe("Button", () => {
-  it("is a non-submitting button by default and handles clicks", async () => {
-    const onClick = vi.fn();
-    render(<Button onClick={onClick}>Save</Button>);
-
-    const button = screen.getByRole("button", { name: "Save" });
-    expect(button).toHaveAttribute("type", "button");
-    await userEvent.click(button);
-    expect(onClick).toHaveBeenCalledOnce();
-  });
-
-  it("does not fire when disabled", async () => {
-    const onClick = vi.fn();
-    render(
-      <Button onClick={onClick} disabled>
-        Save
-      </Button>,
-    );
-
-    await userEvent.click(screen.getByRole("button", { name: "Save" }));
-    expect(onClick).not.toHaveBeenCalled();
-  });
-
-  it("hides the icon from assistive tech and mirrors it in RTL when asked", () => {
-    const { container } = render(
-      <Button icon={FiArrowRight} mirrorIcon>
-        Next
-      </Button>,
-    );
-
-    const icon = container.querySelector("svg");
-    expect(icon).toHaveAttribute("aria-hidden", "true");
-    expect(icon).toHaveClass("rtl:-scale-x-100");
-  });
-});
+import { ButtonLink } from "@/components/ui/Button";
 
 describe("ButtonLink", () => {
   it("stays in the same tab without a new-tab hint", () => {
@@ -63,5 +26,29 @@ describe("ButtonLink", () => {
     });
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("hides the icon from assistive tech and mirrors it in RTL when asked", () => {
+    const { container } = render(
+      <ButtonLink href="#contact" icon={FiArrowRight} mirrorIcon>
+        Next
+      </ButtonLink>,
+    );
+
+    const icon = container.querySelector("svg");
+    expect(icon).toHaveAttribute("aria-hidden", "true");
+    expect(icon).toHaveClass("rtl:-scale-x-100");
+  });
+
+  it("passes link attributes through (download, hreflang)", () => {
+    render(
+      <ButtonLink href="/resume.pdf" hrefLang="en" download>
+        Download CV
+      </ButtonLink>,
+    );
+
+    const link = screen.getByRole("link", { name: "Download CV" });
+    expect(link).toHaveAttribute("download");
+    expect(link).toHaveAttribute("hreflang", "en");
   });
 });

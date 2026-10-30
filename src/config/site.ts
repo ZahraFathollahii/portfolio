@@ -5,7 +5,7 @@
  */
 export const BASE_PATH = "/portfolio";
 
-export const SITE_ORIGIN = "https://zahrafathollahii.github.io";
+const SITE_ORIGIN = "https://zahrafathollahii.github.io";
 
 /** Absolute site URL including base path, with trailing slash. */
 export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}/`;

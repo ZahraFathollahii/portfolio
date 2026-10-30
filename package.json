@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "i18n:check": "node scripts/i18n-check.mts"
+    "i18n:check": "node scripts/i18n-check.mts",
+    "launch:check": "node scripts/launch-check.mts"
   },
   "dependencies": {
     "i18next": "^26.5.11",

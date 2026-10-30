@@ -73,3 +73,6 @@ Node version is pinned in `.nvmrc` and `engines`.
 
 - `yarn dev` · `yarn build` (static output in `out/`) · `yarn lint` · `yarn typecheck`
 - `yarn format` / `yarn format:check` · `yarn test` · `yarn i18n:check`
+- `yarn launch:check` — fails while launch content is missing (email, resume PDF, role/scope TODOs of visible projects).
+  `yarn launch:check --built` also scans `out/**/*.html` for rendered TODO text.
+  The deploy workflow runs `launch:check` before `yarn build` and `launch:check --built` after it, before upload.

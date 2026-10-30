@@ -27,10 +27,7 @@ export async function Hero({ locale }: HeroProps) {
 
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-dot-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
-      />
+      <div aria-hidden className="absolute inset-0 bg-dot-grid" />
       <Container
         className={cn(
           "relative pt-16 pb-20 sm:pt-28 sm:pb-32",

@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { FiArrowLeft, FiArrowUpRight, FiLock } from "react-icons/fi";
 
-import { ButtonLink, Chip, Container, Heading } from "@/components/ui";
+import {
+  ButtonLink,
+  ChipList,
+  Container,
+  Eyebrow,
+  Heading,
+} from "@/components/ui";
 import type { caseStudyProjects } from "@/features/projects/projects.data";
 import { getT } from "@/i18n/getT";
 import type { Locale } from "@/i18n/settings";
@@ -23,10 +29,7 @@ export async function CaseStudyHeader({
 
   return (
     <header className="relative overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-dot-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
-      />
+      <div aria-hidden className="absolute inset-0 bg-dot-grid" />
       <Container className="relative pt-10 pb-16 sm:pt-14 sm:pb-20">
         <Link
           href={`/${locale}/#work`}
@@ -35,9 +38,7 @@ export async function CaseStudyHeader({
           <FiArrowLeft aria-hidden className="size-4 rtl:-scale-x-100" />
           {tActions("allProjects")}
         </Link>
-        <p className="mt-10 text-xs font-semibold tracking-label text-accent uppercase">
-          {t(`${slug}.category`)}
-        </p>
+        <Eyebrow className="mt-10">{t(`${slug}.category`)}</Eyebrow>
         <Heading level={1} accentDot className="mt-4">
           {t(`${slug}.title`)}
         </Heading>
@@ -60,13 +61,7 @@ export async function CaseStudyHeader({
           <div>
             <dt className="text-sm text-muted">{t("labels.stack")}</dt>
             <dd className="mt-2">
-              <ul className="flex flex-wrap gap-2">
-                {project.techs.map((tech) => (
-                  <li key={tech}>
-                    <Chip>{tech}</Chip>
-                  </li>
-                ))}
-              </ul>
+              <ChipList items={project.techs} />
             </dd>
           </div>
         </dl>

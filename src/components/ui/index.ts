@@ -1,7 +1,9 @@
 export { ButtonLink } from "@/components/ui/Button";
 export { Card } from "@/components/ui/Card";
 export { Chip } from "@/components/ui/Chip";
+export { ChipList } from "@/components/ui/ChipList";
 export { Container } from "@/components/ui/Container";
+export { Eyebrow } from "@/components/ui/Eyebrow";
 export { Heading } from "@/components/ui/Heading";
 export { IconButton } from "@/components/ui/IconButton";
 export { IconLink } from "@/components/ui/IconLink";

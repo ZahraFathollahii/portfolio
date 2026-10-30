@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 
-import { ButtonLink, Card, Chip, Heading } from "@/components/ui";
+import {
+  ButtonLink,
+  Card,
+  Chip,
+  ChipList,
+  Eyebrow,
+  Heading,
+} from "@/components/ui";
 import type { projects } from "@/features/projects/projects.data";
 import { getT } from "@/i18n/getT";
 import type { Locale } from "@/i18n/settings";
@@ -27,9 +34,7 @@ export async function ProjectCard({ project, locale }: ProjectCardProps) {
     <Card as="li" interactive={project.hasCaseStudy} className="flex flex-col">
       <article aria-labelledby={titleId} className="flex grow flex-col">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-          <p className="text-xs font-semibold tracking-label text-accent uppercase">
-            {t(`${slug}.category`)}
-          </p>
+          <Eyebrow>{t(`${slug}.category`)}</Eyebrow>
           {project.statusKey && (
             <Chip tone="accent">{t(project.statusKey)}</Chip>
           )}
@@ -54,18 +59,11 @@ export async function ProjectCard({ project, locale }: ProjectCardProps) {
             <dd>{role}</dd>
           </dl>
         )}
-        {project.techs.length > 0 && (
-          <ul
-            aria-label={t("labels.stack")}
-            className="mt-5 flex flex-wrap gap-2"
-          >
-            {project.techs.map((tech) => (
-              <li key={tech}>
-                <Chip>{tech}</Chip>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ChipList
+          items={project.techs}
+          label={t("labels.stack")}
+          className="mt-5"
+        />
         <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">
           {project.hasCaseStudy && (
             <span

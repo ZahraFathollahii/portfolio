@@ -52,6 +52,7 @@ Boring proven solutions. No over-engineering. Readability → scalability → pe
 - Mixed-script lists (e.g. "Front-End Developer · React · TypeScript") render as separate `dir="auto"` items in a
   wrapping flex row, never as one concatenated string — bidi reorders separators on wrap.
 - Atomic Latin labels inside RTL (chips, tech names) get `dir="auto"` (built into `Chip`).
+- Chip groups use `ChipList`; small accent labels above titles use `Eyebrow`; sections reveal through `Section`/`Reveal` — don't hand-roll these.
 - Directional icons (arrows) use `mirrorIcon` / `rtl:-scale-x-100`.
 - `cn()` only joins classes, no merging: `className` props add layout, never override variants.
 - Links that open a new tab take a translated `newTabHint` (screen-reader text); nothing else sets `target="_blank"`.

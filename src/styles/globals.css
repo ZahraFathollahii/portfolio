@@ -18,6 +18,8 @@
   --color-accent: var(--accent);
   --color-accent-contrast: var(--accent-contrast);
   --color-accent-soft: color-mix(in oklab, var(--accent) 14%, transparent);
+  /* Modal backdrop. Literal (inlined) value: ::backdrop doesn't inherit custom properties in older browsers. */
+  --color-scrim: rgb(0 0 0 / 0.6);
 
   --shadow-card: var(--shadow-card-value);
 
@@ -142,4 +144,6 @@
 @utility bg-dot-grid {
   background-image: radial-gradient(var(--dot) 1px, transparent 1px);
   background-size: 22px 22px;
+  /* Fades out from the top so the grid never competes with content below. */
+  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
 }

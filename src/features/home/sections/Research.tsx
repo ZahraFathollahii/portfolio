@@ -1,4 +1,4 @@
-import { Card, Chip, Heading, Section } from "@/components/ui";
+import { Card, ChipList, Eyebrow, Heading, Section } from "@/components/ui";
 import { degrees, thesis } from "@/content/education";
 import { getT } from "@/i18n/getT";
 import type { Locale } from "@/i18n/settings";
@@ -16,20 +16,12 @@ export async function Research({ locale }: ResearchProps) {
     <Section id="research" title={t("research.title")}>
       <div className="grid gap-6 lg:grid-cols-5">
         <Card as="article" className="lg:col-span-3">
-          <p className="text-xs font-semibold tracking-label text-accent uppercase">
-            {t(thesis.labelKey)}
-          </p>
+          <Eyebrow>{t(thesis.labelKey)}</Eyebrow>
           <Heading level={3} className="mt-3">
             {t(thesis.titleKey)}
           </Heading>
           <p className="mt-4 text-muted">{t(thesis.summaryKey)}</p>
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {thesis.methods.map((method) => (
-              <li key={method}>
-                <Chip tone="accent">{method}</Chip>
-              </li>
-            ))}
-          </ul>
+          <ChipList items={thesis.methods} tone="accent" className="mt-5" />
         </Card>
         <ul className="grid gap-6 lg:col-span-2">
           {degrees.map((degree) => {
@@ -49,13 +41,7 @@ export async function Research({ locale }: ResearchProps) {
               <Card as="li" key={degree.id}>
                 <Heading level={3}>{t(degree.degreeKey)}</Heading>
                 <p className="mt-1 text-sm text-muted">{t(degree.schoolKey)}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {details.map((detail) => (
-                    <li key={detail}>
-                      <Chip>{detail}</Chip>
-                    </li>
-                  ))}
-                </ul>
+                <ChipList items={details} className="mt-4" />
               </Card>
             );
           })}

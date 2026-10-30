@@ -52,7 +52,7 @@ export function MobileMenu({ locale, resume }: MobileMenuProps) {
         onClose={() => setIsOpen(false)}
         // The panel fills the dialog box, so a click whose target is the dialog itself hit the backdrop.
         onClick={(event) => event.target === event.currentTarget && close()}
-        className="m-0 ms-auto h-dvh max-h-none w-80 max-w-[85vw] border-s border-border bg-surface p-0 text-text backdrop:bg-black/60"
+        className="m-0 ms-auto h-dvh max-h-none w-80 max-w-[85vw] border-s border-border bg-surface p-0 text-text backdrop:bg-scrim"
       >
         <div className="flex h-full flex-col gap-8 p-6">
           <div className="flex justify-end">

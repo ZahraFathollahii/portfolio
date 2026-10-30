@@ -1,6 +1,6 @@
 import { FiMapPin } from "react-icons/fi";
 
-import { Chip, Heading, Section } from "@/components/ui";
+import { ChipList, Heading, Section } from "@/components/ui";
 import { experience } from "@/content/experience";
 import { getT } from "@/i18n/getT";
 import type { Locale } from "@/i18n/settings";
@@ -45,13 +45,7 @@ export async function Experience({ locale }: ExperienceProps) {
                     </p>
                   </div>
                   <p className="mt-2 text-muted">{t(role.descriptionKey)}</p>
-                  <ul className="mt-3 flex flex-wrap gap-2">
-                    {role.techs.map((tech) => (
-                      <li key={tech}>
-                        <Chip>{tech}</Chip>
-                      </li>
-                    ))}
-                  </ul>
+                  <ChipList items={role.techs} className="mt-3" />
                 </li>
               ))}
             </ol>

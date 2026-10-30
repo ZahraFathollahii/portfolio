@@ -79,6 +79,7 @@ export async function ProjectCard({ project, locale }: ProjectCardProps) {
           {/* -mx cancels the ghost padding on whichever edge it touches, wrapped or not. */}
           <ButtonLink
             href={project.url}
+            aria-describedby={titleId}
             variant="ghost"
             size="sm"
             icon={FiArrowUpRight}

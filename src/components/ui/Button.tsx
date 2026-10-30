@@ -136,7 +136,7 @@ export function ButtonLink({
       >
         {children}
       </ButtonContent>
-      {newTabHint && <span className="sr-only">({newTabHint})</span>}
+      {newTabHint && <span className="sr-only"> ({newTabHint})</span>}
     </a>
   );
 }

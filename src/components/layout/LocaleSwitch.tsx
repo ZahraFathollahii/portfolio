@@ -28,14 +28,14 @@ export function LocaleSwitch({ className }: LocaleSwitchProps) {
     <Link
       href={switchLocalePath(pathname, target)}
       hrefLang={target}
-      lang={target}
-      aria-label={t("locale.switchLabel")}
       className={cn(
         "inline-flex h-10 items-center rounded-control px-3 text-sm font-medium text-muted transition-colors duration-200 hover:bg-surface hover:text-text",
         className,
       )}
     >
-      {t("locale.switchTo")}
+      {/* Accessible name starts with the visible word (WCAG 2.5.3); only that word is in the target language. */}
+      <span lang={target}>{t("locale.switchTo")}</span>
+      <span className="sr-only"> ({t("locale.switchLabel")})</span>
     </Link>
   );
 }

@@ -67,4 +67,10 @@ Hosting paths are defined once in `src/config/site.ts`. Conventions for contribu
 
 ## License
 
-Code © Zahra Fathollahi. Fonts: Inter and Vazirmatn under the SIL Open Font License (`src/assets/fonts/`).
+Code © Zahra Fathollahi — all rights reserved. No open-source license is granted.
+
+The content — text and translations, profile photo, resume, project descriptions and screenshots — is
+**not licensed for reuse** in any form.
+
+Third-party fonts keep their own license: Inter and Vazirmatn are under the SIL Open Font License
+(`src/assets/fonts/`).

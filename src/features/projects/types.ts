@@ -1,4 +1,4 @@
-export type ProjectStatusKey = "status.active" | "status.ganoticLaunch";
+export type ProjectStatusKey = "status.ganoticLaunch";
 
 /**
  * Non-translatable project data. All copy lives in `projects.json` under the slug:
@@ -8,7 +8,8 @@ export type Project = {
   slug: string;
   url: string;
   techs: readonly string[];
-  statusKey: ProjectStatusKey;
+  /** Company projects have no status line. */
+  statusKey: ProjectStatusKey | null;
   /** Shown as a full card in "Selected work"; otherwise in the compact "More work" list. */
   featured: boolean;
   hasCaseStudy: boolean;

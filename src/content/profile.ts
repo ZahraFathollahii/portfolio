@@ -1,3 +1,4 @@
+import { SHOW_GANOTIC } from "@/config/site";
 import type { Locale } from "@/i18n/settings";
 
 export const profile = {
@@ -15,7 +16,7 @@ export const profile = {
   } satisfies Record<Locale, `/${string}`>,
 } as const;
 
-export const socialLinks = [
+const allSocialLinks = [
   {
     id: "linkedin",
     href: "https://www.linkedin.com/in/zahra-fathollahi",
@@ -29,4 +30,8 @@ export const socialLinks = [
   { id: "website", href: "https://ganotic.ir", labelKey: "social.website" },
 ] as const;
 
-export type SocialId = (typeof socialLinks)[number]["id"];
+export type SocialId = (typeof allSocialLinks)[number]["id"];
+
+/** "website" is Ganotic's site, so it follows `SHOW_GANOTIC`. */
+export const socialLinks: readonly (typeof allSocialLinks)[number][] =
+  allSocialLinks.filter((link) => SHOW_GANOTIC || link.id !== "website");

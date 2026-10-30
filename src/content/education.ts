@@ -29,5 +29,6 @@ export const thesis = {
     "4+1 View Model",
     "ATAM",
     "CSP",
+    "PAT",
   ],
 } as const;

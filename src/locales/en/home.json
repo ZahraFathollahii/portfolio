@@ -63,7 +63,7 @@
     "thesis": {
       "label": "M.Sc. thesis",
       "title": "Designing a Pervasive Agent-Based System for the Smart School Environment",
-      "summary": "A multi-agent, edge-oriented architecture for a smart school — documented with the 4+1 view model, evaluated with ATAM and formally verified with CSP."
+      "summary": "A multi-agent, edge-oriented architecture for a smart school — documented with the 4+1 view model, evaluated with ATAM and formally verified through CSP model checking in PAT."
     },
     "degrees": {
       "msc": {
@@ -81,6 +81,6 @@
   },
   "contact": {
     "title": "Contact",
-    "body": "I'm open to front-end roles, including remote positions. Email is the quickest way to reach me — you can also find me on LinkedIn and GitHub."
+    "body": "Email is the quickest way to reach me — you can also find me on LinkedIn and GitHub."
   }
 }

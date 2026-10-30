@@ -12,3 +12,9 @@ export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}/`;
 
 /** Shows the "Available for opportunities" badge in the hero. */
 export const SHOW_AVAILABILITY_BADGE = false;
+
+/**
+ * Shows Ganotic (card, case-study page, sitemap entry and the "Website" social link).
+ * Its content stays in place either way.
+ */
+export const SHOW_GANOTIC = false;

@@ -1,7 +1,8 @@
+import { SHOW_GANOTIC } from "@/config/site";
 import type { Project } from "@/features/projects/types";
 
 // Company source code is private — live links only. Order = display order.
-export const projects = [
+const allProjects = [
   {
     slug: "mssp",
     url: "https://mssp.inhso.ir",
@@ -14,7 +15,7 @@ export const projects = [
       "Recharts",
       "PWA",
     ],
-    statusKey: "status.active",
+    statusKey: null,
     featured: true,
     hasCaseStudy: true,
   },
@@ -28,7 +29,7 @@ export const projects = [
       "TanStack Query",
       "Tailwind CSS",
     ],
-    statusKey: "status.active",
+    statusKey: null,
     featured: true,
     hasCaseStudy: true,
   },
@@ -43,7 +44,7 @@ export const projects = [
       "Tailwind CSS",
       "Framer Motion",
     ],
-    statusKey: "status.active",
+    statusKey: null,
     featured: true,
     hasCaseStudy: true,
   },
@@ -57,7 +58,7 @@ export const projects = [
       "TanStack Query",
       "Tailwind CSS",
     ],
-    statusKey: "status.active",
+    statusKey: null,
     featured: true,
     hasCaseStudy: true,
   },
@@ -80,7 +81,7 @@ export const projects = [
       "Tailwind CSS",
       "Ant Design",
     ],
-    statusKey: "status.active",
+    statusKey: null,
     featured: false,
     hasCaseStudy: false,
   },
@@ -89,15 +90,22 @@ export const projects = [
     url: "https://inhs.isikato.ir",
     // TODO(techs): not listed in the README.
     techs: [],
-    statusKey: "status.active",
+    statusKey: null,
     featured: false,
     hasCaseStudy: false,
   },
 ] as const satisfies readonly Project[];
 
-export type ProjectSlug = (typeof projects)[number]["slug"];
+export type ProjectSlug = (typeof allProjects)[number]["slug"];
 
 export type CaseStudySlug = Extract<
-  (typeof projects)[number],
+  (typeof allProjects)[number],
   { hasCaseStudy: true }
 >["slug"];
+
+type ProjectEntry = (typeof allProjects)[number];
+
+/** Projects that are rendered and statically generated (Ganotic is behind `SHOW_GANOTIC`). */
+export const projects: readonly ProjectEntry[] = allProjects.filter(
+  (project) => SHOW_GANOTIC || project.slug !== "ganotic",
+);

@@ -1,5 +1,7 @@
 # Portfolio — Zahra Fathollahi
 
+Rules for anyone (human or tool) changing this repository. Read this file fully before any change and follow it exactly.
+
 Personal bilingual (FA/EN) portfolio. Built in phases; stop at every checkpoint and wait for approval.
 
 ## Hosting
@@ -36,7 +38,8 @@ Boring proven solutions. No over-engineering. Readability → scalability → pe
 - ✅ Strict `@/*` path alias. No relative imports climbing more than one level (enforced by ESLint).
 - ✅ Barrel files only at `components/ui/index.ts` and `components/layout/index.ts` — flat, no re-export chains.
 - ✅ Zero hard-coded user-facing strings: everything via `t("...")`. FA and EN key sets must match exactly (`yarn i18n:check`).
-  Keys are always full string literals (in components or `content/*`) — never built with template strings — so the unused-key check can see them.
+  Keys are always full string literals (in components or `content/*`) so the unused-key check can see them.
+  Only exception: slug-keyed project copy (`projects:<slug>.*`) uses typed template keys; the check counts the slug literal.
 - ✅ Logical properties only for direction-sensitive spacing/position (`ms-/me-/ps-/pe-/start-/end-`). Full RTL/LTR parity.
 - ✅ Component-local types stay in the file; shared domain types live in `features/*/types.ts`.
 - ✅ Server Components by default; `"use client"` only where interaction requires it
@@ -59,6 +62,19 @@ Boring proven solutions. No over-engineering. Readability → scalability → pe
 - `cn()` only joins classes, no merging: `className` props add layout, never override variants.
 - Links that open a new tab take a translated `newTabHint` (screen-reader text); nothing else sets `target="_blank"`.
 - Numbers shown to users go through `formatNumber(value, locale)` (Persian digits in FA).
+
+## Required checks before every commit
+
+All must pass:
+
+```bash
+yarn lint
+yarn typecheck
+yarn format:check
+yarn test
+yarn i18n:check
+yarn build
+```
 
 ## Workflow
 

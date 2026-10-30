@@ -4489,6 +4489,7 @@ __metadata:
     react-dom: "npm:19.3.0"
     react-i18next: "npm:^17.1.9"
     react-icons: "npm:^5.7.0"
+    sharp: "npm:0.35.5"
     tailwindcss: "npm:^4"
     typescript: "npm:^5"
     vite: "npm:^8.3.5"
@@ -4977,7 +4978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.35.5":
+"sharp@npm:0.35.5, sharp@npm:^0.35.5":
   version: 0.35.5
   resolution: "sharp@npm:0.35.5"
   dependencies:

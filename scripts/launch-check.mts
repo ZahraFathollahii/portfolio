@@ -6,45 +6,29 @@
  * With `--built` (run after `yarn build`), it also scans every generated HTML page in out/ for
  * rendered "TODO" text — the only way to prove no placeholder reaches a visitor.
  *
- * App modules are imported directly so the check reads the same data the site renders;
- * a resolve hook maps the `@/` alias, since Node doesn't read tsconfig paths.
+ * The profile photo is optional: its absence is reported as a note, never a failure.
  *
  * Run with Node's native type stripping: `node scripts/launch-check.mts [--built]`.
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { registerHooks } from "node:module";
 import { join, relative } from "node:path";
-import { pathToFileURL } from "node:url";
+
+import { importApp, root } from "./app-modules.mts";
 
 type Json = { [key: string]: string | Json };
 
-const root = join(import.meta.dirname, "..");
 const srcDir = join(root, "src");
-const srcUrl = pathToFileURL(`${srcDir}/`).href;
 const checkBuilt = process.argv.includes("--built");
 
-registerHooks({
-  resolve(specifier, context, nextResolve) {
-    return nextResolve(
-      specifier.startsWith("@/")
-        ? new URL(`${specifier.slice(2)}.ts`, srcUrl).href
-        : specifier,
-      context,
-    );
-  },
-  load(url, context, nextLoad) {
-    return url.startsWith(srcUrl) && url.endsWith(".ts")
-      ? nextLoad(url, { ...context, format: "module-typescript" })
-      : nextLoad(url, context);
-  },
-});
-
-const { profile } = (await import(
-  new URL("content/profile.ts", srcUrl).href
-)) as typeof import("../src/content/profile.ts");
-const { projects } = (await import(
-  new URL("features/projects/projects.data.ts", srcUrl).href
-)) as typeof import("../src/features/projects/projects.data.ts");
+const { profile } =
+  await importApp<typeof import("../src/content/profile.ts")>(
+    "content/profile.ts",
+  );
+const { projects } = await importApp<
+  typeof import("../src/features/projects/projects.data.ts")
+>("features/projects/projects.data.ts");
+const { getProfilePhoto } =
+  await importApp<typeof import("../src/lib/photo.ts")>("lib/photo.ts");
 // i18n/settings.ts isn't imported: it pulls in next/navigation, which only loads inside Next.
 // profile.resume `satisfies Record<Locale, …>`, so its keys are exactly the locales.
 type Locale = keyof typeof profile.resume;
@@ -113,6 +97,10 @@ if (checkBuilt) {
       }
     }
   }
+}
+
+if (getProfilePhoto() === null) {
+  console.log("Note: no profile photo (optional) — see `yarn photo:build`.");
 }
 
 if (missing.length > 0) {

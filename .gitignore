@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# original profile photo (keeps EXIF) — processed copies live in public/images/profile/
+/photo-source/

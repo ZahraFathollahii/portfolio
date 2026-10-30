@@ -2,6 +2,9 @@
  * Fails if FA and EN translation keys differ, a value is empty, or a key is never referenced in src/.
  * "Referenced" = the full key appears as a string literal somewhere in src/ (component or content data),
  * so translation keys must never be built with template strings.
+ * Exception: slug-keyed namespaces (`<slug>.field`), whose fields are read with typed template keys —
+ * there a key counts as used when its slug appears as a literal (TypeScript checks the fields).
+ * Values starting with "TODO" are listed as a reminder, not an error.
  *
  * Run with Node's native type stripping: `node scripts/i18n-check.mts`.
  */
@@ -14,6 +17,7 @@ const root = join(import.meta.dirname, "..");
 const srcDir = join(root, "src");
 const localesDir = join(srcDir, "locales");
 const referenceLocale = "en";
+const slugKeyedFiles = new Set(["projects.json"]);
 
 function flatten(object: Json, prefix = ""): Map<string, string> {
   const result = new Map<string, string>();
@@ -43,7 +47,10 @@ function listSourceFiles(dir: string): string[] {
 }
 
 const errors: string[] = [];
-const locales = readdirSync(localesDir);
+const todos: string[] = [];
+const locales = readdirSync(localesDir, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name);
 const files = readdirSync(join(localesDir, referenceLocale)).filter((file) =>
   file.endsWith(".json"),
 );
@@ -65,19 +72,31 @@ for (const file of files) {
         );
       if (value.trim() === "")
         errors.push(`${locale}/${file}: empty value for "${key}"`);
+      if (value.trimStart().startsWith("TODO"))
+        todos.push(`${locale}/${file}: ${key}`);
     }
   }
 
   for (const key of reference.keys()) {
     const base = key.replace(/_(zero|one|two|few|many|other)$/, "");
-    if (
-      ![`"${base}"`, `'${base}'`, `\`${base}\``].some((literal) =>
+    const candidates = slugKeyedFiles.has(file)
+      ? [base, base.split(".")[0] ?? base]
+      : [base];
+    const isUsed = candidates.some((candidate) =>
+      [`"${candidate}"`, `'${candidate}'`, `\`${candidate}\``].some((literal) =>
         source.includes(literal),
-      )
-    ) {
+      ),
+    );
+    if (!isUsed) {
       errors.push(`${referenceLocale}/${file}: unused "${key}"`);
     }
   }
+}
+
+if (todos.length > 0) {
+  console.log(
+    `TODO values (${todos.length}) — render nothing until written:\n  ${todos.join("\n  ")}`,
+  );
 }
 
 if (errors.length > 0) {

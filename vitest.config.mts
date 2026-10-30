@@ -10,6 +10,8 @@ export default defineConfig({
   },
   test: {
     environment: "jsdom",
+    // Mirrors next.config `trailingSlash: true`, so next/link renders the same hrefs as the build.
+    env: { __NEXT_TRAILING_SLASH: "true" },
     setupFiles: ["./vitest.setup.ts"],
     include: ["src/**/*.test.{ts,tsx}"],
   },

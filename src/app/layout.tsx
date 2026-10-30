@@ -1,16 +1,7 @@
 import "@/styles/globals.css";
 
-import { inter, vazirmatn } from "@/lib/fonts";
-
-// Phase 1 placeholder — replaced by the [locale] layout in Phase 2.
+// Pass-through root: <html> is rendered by [locale]/layout (lang/dir per locale),
+// and by the root page and not-found, which live outside any locale.
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
-    <html
-      lang="en"
-      data-theme="dark"
-      className={`${inter.variable} ${vazirmatn.variable}`}
-    >
-      <body>{children}</body>
-    </html>
-  );
+  return children;
 }

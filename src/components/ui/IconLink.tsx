@@ -1,5 +1,6 @@
 import type { IconType } from "react-icons";
 
+import { iconControlClasses } from "@/components/ui/IconButton";
 import { cn } from "@/lib/cn";
 
 type IconLinkProps = {
@@ -24,10 +25,7 @@ export function IconLink({
       href={href}
       aria-label={newTabHint ? `${label} (${newTabHint})` : label}
       {...(newTabHint && { target: "_blank", rel: "noopener noreferrer" })}
-      className={cn(
-        "inline-flex size-10 items-center justify-center rounded-control text-muted transition-colors duration-200 hover:bg-surface hover:text-text",
-        className,
-      )}
+      className={cn(iconControlClasses, className)}
     >
       <Icon aria-hidden className="size-5" />
     </a>

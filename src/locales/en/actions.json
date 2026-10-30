@@ -1,0 +1,12 @@
+{
+  "downloadCv": "Download CV",
+  "newTab": "opens in a new tab",
+  "theme": {
+    "dark": "Dark theme"
+  },
+  "menu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "backHome": "Back to home"
+}

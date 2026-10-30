@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "زهرا فتح‌اللهی",
+    "title": "زهرا فتح‌اللهی — توسعه‌دهنده‌ی فرانت‌اند",
+    "description": "توسعه‌دهنده‌ی فرانت‌اند در تهران؛ رابط‌های کاربری واکنش‌گرا و آماده‌ی محصول با React، TypeScript و Tailwind CSS می‌سازم."
+  },
+  "language": {
+    "name": "فارسی"
+  },
+  "locale": {
+    "switchTo": "English",
+    "switchLabel": "مطالعه‌ی این صفحه به انگلیسی"
+  },
+  "nav": {
+    "sectionsLabel": "بخش‌های صفحه",
+    "about": "درباره‌ی من",
+    "work": "نمونه‌کارها",
+    "experience": "سوابق کاری",
+    "research": "پژوهش",
+    "contact": "تماس"
+  },
+  "skipLink": "رفتن به محتوای اصلی",
+  "menu": {
+    "title": "منو"
+  },
+  "social": {
+    "label": "شبکه‌های اجتماعی",
+    "linkedin": "لینکدین",
+    "github": "گیت‌هاب",
+    "website": "وب‌سایت",
+    "email": "ایمیل"
+  },
+  "footer": {
+    "quickLinks": "دسترسی سریع",
+    "copyright": "© {{year}} زهرا فتح‌اللهی"
+  }
+}

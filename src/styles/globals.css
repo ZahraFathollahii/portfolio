@@ -85,7 +85,8 @@
 
 :lang(fa) {
   /* Vazirmatn (Arabic-script subset) first; Latin glyphs fall through to Inter. */
-  --font-stack: var(--font-vazirmatn), var(--font-inter), Tahoma, sans-serif;
+  --font-stack:
+    var(--font-vazirmatn), var(--font-inter), Tahoma, system-ui, sans-serif;
   --leading-body: 1.9;
   --leading-heading: 1.45;
   --leading-display: 1.25;
@@ -108,6 +109,11 @@
   ::selection {
     background: var(--accent);
     color: var(--accent-contrast);
+  }
+
+  /* Lock page scroll while a modal dialog (mobile menu) is open. */
+  html:has(dialog[open]) {
+    overflow: hidden;
   }
 
   :focus-visible {

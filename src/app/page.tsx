@@ -7,10 +7,17 @@ import { getT } from "@/i18n/getT";
 import { defaultLocale, locales } from "@/i18n/settings";
 import { cn } from "@/lib/cn";
 import { inter, vazirmatn } from "@/lib/fonts";
+import { languageAlternates } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getT(defaultLocale, "common");
-  return { title: t("site.title") };
+  // Language picker that redirects: crawlers should index the locale pages it links to.
+  return {
+    title: t("site.title"),
+    description: t("site.description"),
+    robots: { index: false, follow: true },
+    alternates: { languages: languageAlternates() },
+  };
 }
 
 // "fa*" browsers → /fa/, everyone else → /en/. Runs before paint.

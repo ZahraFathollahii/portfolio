@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "i18n:check": "node scripts/i18n-check.mts",
     "launch:check": "node scripts/launch-check.mts",
-    "photo:build": "node scripts/photo-build.mts"
+    "photo:build": "node scripts/photo-build.mts",
+    "og:build": "node scripts/og-build.mts"
   },
   "dependencies": {
     "i18next": "^26.5.11",

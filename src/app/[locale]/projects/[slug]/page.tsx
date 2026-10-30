@@ -7,6 +7,7 @@ import { ProjectPager } from "@/features/projects/ProjectPager";
 import { caseStudyProjects } from "@/features/projects/projects.data";
 import { getT } from "@/i18n/getT";
 import { assertLocale } from "@/i18n/settings";
+import { pageMetadata } from "@/lib/seo";
 
 // Only visible projects with a case study are generated (Ganotic follows SHOW_GANOTIC).
 export const dynamicParams = false;
@@ -31,10 +32,12 @@ export async function generateMetadata({
   const { locale, project } = await getCaseStudy(params);
   const t = await getT(locale, "projects");
 
-  return {
+  return pageMetadata({
+    locale,
+    path: `projects/${project.slug}/`,
     title: t(`${project.slug}.title`),
     description: t(`${project.slug}.summary`),
-  };
+  });
 }
 
 export default async function CaseStudyPage({

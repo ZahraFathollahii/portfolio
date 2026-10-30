@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { SiteShell, ThemeScript } from "@/components/layout";
+import { SITE_URL } from "@/config/site";
 import { getT } from "@/i18n/getT";
 import { I18nProvider } from "@/i18n/I18nProvider";
 import { getClientResources } from "@/i18n/resources";
@@ -21,7 +22,9 @@ export async function generateMetadata({
   const t = await getT(locale, "common");
 
   return {
-    title: { default: t("site.title"), template: `%s · ${t("site.name")}` },
+    // Pages set full titles, canonical and hreflang via lib/seo.ts; these are fallbacks.
+    metadataBase: new URL(SITE_URL),
+    title: t("site.title"),
     description: t("site.description"),
   };
 }

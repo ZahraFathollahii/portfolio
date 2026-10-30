@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
+import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
 type SectionProps = {
@@ -13,6 +14,7 @@ type SectionProps = {
   children: ReactNode;
 };
 
+/** Every section reveals on scroll, so the effect is applied here once. */
 export function Section({
   id,
   title,
@@ -29,13 +31,15 @@ export function Section({
       className={cn("scroll-mt-20 py-20 sm:py-28", className)}
     >
       <Container>
-        {eyebrow && (
-          <p className="mb-3 text-sm font-medium text-accent">{eyebrow}</p>
-        )}
-        <Heading level={2} id={titleId}>
-          {title}
-        </Heading>
-        <div className="mt-10">{children}</div>
+        <Reveal>
+          {eyebrow && (
+            <p className="mb-3 text-sm font-medium text-accent">{eyebrow}</p>
+          )}
+          <Heading level={2} id={titleId}>
+            {title}
+          </Heading>
+          <div className="mt-10">{children}</div>
+        </Reveal>
       </Container>
     </section>
   );

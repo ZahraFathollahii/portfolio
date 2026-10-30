@@ -5,4 +5,5 @@ export { Container } from "@/components/ui/Container";
 export { Heading } from "@/components/ui/Heading";
 export { IconButton } from "@/components/ui/IconButton";
 export { IconLink } from "@/components/ui/IconLink";
+export { Reveal } from "@/components/ui/Reveal";
 export { Section } from "@/components/ui/Section";

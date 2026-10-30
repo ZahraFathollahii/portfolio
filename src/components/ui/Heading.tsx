@@ -2,8 +2,8 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-type HeadingLevel = 1 | 2 | 3;
-type HeadingSize = "display" | "h2" | "h3";
+type HeadingLevel = 1 | 2 | 3 | 4;
+type HeadingSize = "display" | "h2" | "h3" | "h4";
 
 type HeadingProps = {
   level: HeadingLevel;
@@ -20,12 +20,14 @@ const defaultSize: Record<HeadingLevel, HeadingSize> = {
   1: "display",
   2: "h2",
   3: "h3",
+  4: "h4",
 };
 
 const sizeClasses: Record<HeadingSize, string> = {
   display: "text-display font-extrabold",
   h2: "text-h2 font-bold",
   h3: "text-h3 font-semibold",
+  h4: "text-base font-semibold",
 };
 
 export function Heading({

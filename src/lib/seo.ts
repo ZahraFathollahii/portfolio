@@ -8,7 +8,7 @@ const openGraphLocale: Record<Locale, string> = { en: "en_US", fa: "fa_IR" };
 
 /** Absolute URL of a localized page. `path` has no leading slash and keeps the trailing one ("projects/mssp/"). */
 export function localeUrl(locale: Locale, path = ""): string {
-  return `${SITE_URL}${locale}/${path}`;
+  return `${SITE_URL}/${locale}/${path}`;
 }
 
 /** hreflang map for a path, with x-default = the default locale. */
@@ -40,7 +40,7 @@ export async function pageMetadata({
   const fullTitle = title ? `${title} · ${t("site.name")}` : t("site.title");
   const url = localeUrl(locale, path);
   const image = {
-    url: `${SITE_URL}og/og-${locale}.png`,
+    url: `${SITE_URL}/og/og-${locale}.png`,
     width: 1200,
     height: 630,
     alt: t("site.title"),

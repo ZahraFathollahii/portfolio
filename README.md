@@ -1,7 +1,7 @@
 # Zahra Fathollahi — Portfolio
 
 Bilingual (English / Persian) portfolio of Zahra Fathollahi, front-end developer.
-Live at **https://zahrafathollahii.github.io/portfolio/**.
+Live at **https://zahrafathollahi.ir**.
 
 <!-- TODO(screenshots): add home page screenshots (EN + FA, dark + light) before launch. -->
 
@@ -29,7 +29,7 @@ Requires Node 24 (see `.nvmrc`) and Yarn 4 via Corepack.
 ```bash
 corepack enable
 yarn install
-yarn dev        # http://localhost:3000/portfolio/en/
+yarn dev        # http://localhost:3000/en/
 ```
 
 ## Scripts
@@ -63,7 +63,7 @@ Hosting paths are defined once in `src/config/site.ts`. Conventions for contribu
 ## Deployment
 
 - **CI** (`.github/workflows/ci.yml`) runs lint, typecheck, format, tests, `i18n:check` and the build on every push and pull request.
-- **Deploy** (`.github/workflows/deploy.yml`) is started manually from the Actions tab. It runs `launch:check`, builds, runs `launch:check --built`, and publishes `out/` to GitHub Pages. GitHub Pages must use **Source: GitHub Actions**.
+- **Deploy** (`.github/workflows/deploy.yml`) is started manually from the Actions tab. It runs `launch:check`, builds, runs `launch:check --built`, and publishes `out/` to GitHub Pages. GitHub Pages must use **Source: GitHub Actions**, with the custom domain `zahrafathollahi.ir` set under Settings → Pages (also recorded in `public/CNAME`).
 
 ## License
 

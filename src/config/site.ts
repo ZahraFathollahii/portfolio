@@ -3,12 +3,11 @@
  * Everything that builds a URL (links to raw assets, metadata, sitemap, canonical)
  * must read from here — never hard-code the base path.
  */
-export const BASE_PATH = "/portfolio";
+/** Path prefix of the site on its host. Empty: served from the domain root. */
+export const BASE_PATH = "";
 
-const SITE_ORIGIN = "https://zahrafathollahii.github.io";
-
-/** Absolute site URL including base path, with trailing slash. */
-export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}/`;
+/** Canonical origin (apex; www redirects to it). No trailing slash — append "/path". */
+export const SITE_URL = "https://zahrafathollahi.ir";
 
 /** Shows the "Available for opportunities" badge in the hero. */
 export const SHOW_AVAILABILITY_BADGE = false;

@@ -65,7 +65,7 @@ function template(locale: string): string {
   const items = [role, ...profile.headlineTechs]
     .map((item) => `<span dir="auto">${escapeHtml(item)}</span>`)
     .join(`<span class="sep">·</span>`);
-  const host = SITE_URL.replace(/^https:\/\//, "").replace(/\/$/, "");
+  const host = SITE_URL.replace(/^https:\/\//, "");
 
   return `<!doctype html>
 <html lang="${locale}" dir="${isFa ? "rtl" : "ltr"}"><head><meta charset="utf-8"><style>

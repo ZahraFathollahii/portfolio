@@ -4,12 +4,14 @@ Personal bilingual (FA/EN) portfolio. Built in phases; stop at every checkpoint 
 
 ## Hosting
 
-- GitHub Pages: `https://zahrafathollahii.github.io/portfolio/`
-- `next.config.ts`: `output: 'export'`, `basePath: '/portfolio'`, `trailingSlash: true`, `images.unoptimized: true`.
-- The base path / site URL live **only** in `src/config/site.ts` (`BASE_PATH`, `SITE_URL`).
+- GitHub Pages with a custom domain: `https://zahrafathollahi.ir` (apex is canonical; `www` redirects to it).
+  `public/CNAME` holds the domain; the custom domain must also be set in the repo's Pages settings.
+- `next.config.ts`: `output: 'export'`, `basePath: BASE_PATH` (currently `""`), `trailingSlash: true`, `images.unoptimized: true`.
+- The base path / site URL live **only** in `src/config/site.ts` (`BASE_PATH`, `SITE_URL` — no trailing slash).
   Every raw asset path, OG image, sitemap, canonical and hreflang URL reads from there.
-  Never hard-code `/portfolio` anywhere else. (`next/link`, `next/font` and statically imported `next/image` sources add it automatically;
-  a string `src` does not — images live in `src/assets/` and are imported.)
+  Never hard-code the domain or a base path anywhere else. Raw asset paths go through `assetPath()`;
+  `next/link`, `next/font` and statically imported `next/image` sources handle the base path themselves
+  (a string `src` does not — images live in `src/assets/` and are imported).
 
 ## Mindset
 

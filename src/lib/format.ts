@@ -36,3 +36,13 @@ export function formatYear(date: Date, locale: Locale): string {
     timeZone: "UTC",
   }).format(date);
 }
+
+/** "Jul 2023 – Present" / "تیر ۱۴۰۲ – اکنون". `end: null` means ongoing. */
+export function formatDateRange(
+  start: string,
+  end: string | null,
+  locale: Locale,
+  presentLabel: string,
+): string {
+  return `${formatMonthYear(start, locale)} – ${end ? formatMonthYear(end, locale) : presentLabel}`;
+}

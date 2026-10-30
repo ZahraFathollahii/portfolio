@@ -1,1 +1,86 @@
-{}
+{
+  "hero": {
+    "role": "Front-End Developer",
+    "intro": "I build responsive, intuitive and production-ready interfaces with React, TypeScript and Tailwind CSS. I focus on scalable component architecture, and I'm at home in the design process — from Figma to production.",
+    "location": "Tehran, Iran",
+    "remote": "Open to remote",
+    "available": "Available for opportunities"
+  },
+  "about": {
+    "title": "About",
+    "p1": "I'm a front-end developer based in Tehran. I care most about component architecture that stays easy to change as a product grows, and about interfaces that feel obvious to the people using them.",
+    "p2": "At Pardazeshgaran Sepehr I started with a three-month React and Redux internship and moved on to full-time production work: internal and client-facing applications built with React, TypeScript, Tailwind CSS and Ant Design, with a seat in the UI/UX process in Figma.",
+    "p3": "Before that, I spent two years teaching robotics and programming in group and one-on-one classes. I also hold an M.Sc. in Software Engineering — my thesis designed and formally verified a multi-agent architecture for smart schools."
+  },
+  "skills": {
+    "title": "Skills",
+    "production": "Use in production",
+    "learningTitle": "Currently learning",
+    "learning": {
+      "advancedReact": "Advanced React patterns & performance",
+      "testing": "Unit & component testing",
+      "architecture": "Modern front-end architecture"
+    }
+  },
+  "work": {
+    "title": "Selected work",
+    "moreTitle": "More work"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "locations": {
+      "tehran": "Tehran"
+    },
+    "sepehr": {
+      "company": "Pardazeshgaran Sepehr",
+      "frontend": {
+        "title": "Front-End Developer",
+        "description": "Build internal and client-facing applications with React, TypeScript, Tailwind CSS and Ant Design, and take part in the UI/UX process in Figma."
+      },
+      "intern": {
+        "title": "Front-End Developer Intern",
+        "description": "Three-month React and Redux internship building production UI."
+      }
+    },
+    "sigma": {
+      "company": "SIGMA Educational Company",
+      "instructor": {
+        "title": "Robotics Instructor",
+        "description": "Taught robotics and programming in group and one-on-one classes, designed hands-on workshops (Arduino, mBlock, Scratch, basic electronics), and judged national robotics competitions at the University of Tehran."
+      }
+    },
+    "bookGarden": {
+      "company": "Book Garden Robotics Club",
+      "intern": {
+        "title": "Robotics Intern",
+        "description": "Designed circuit boards in Altium Designer and worked with SolidWorks and Arduino."
+      }
+    }
+  },
+  "research": {
+    "title": "Research & education",
+    "thesis": {
+      "label": "M.Sc. thesis",
+      "title": "Designing a Pervasive Agent-Based System for the Smart School Environment",
+      "summary": "A multi-agent, edge-oriented architecture for a smart school — documented with the 4+1 view model, evaluated with ATAM and formally verified with CSP."
+    },
+    "degrees": {
+      "msc": {
+        "degree": "M.Sc. Software Engineering",
+        "school": "Islamic Azad University, Science and Research Branch",
+        "year": "2026"
+      },
+      "bsc": {
+        "degree": "B.Sc. Software Engineering",
+        "school": "Islamic Azad University, West Tehran Branch",
+        "note": "Completed in 3.5 years"
+      },
+      "gpa": "GPA {{value}} / {{scale}}"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "I'm open to front-end roles, including remote positions. Email is the quickest way to reach me — you can also find me on LinkedIn and GitHub."
+  }
+}

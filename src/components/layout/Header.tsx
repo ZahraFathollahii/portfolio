@@ -5,10 +5,9 @@ import { LocaleSwitch } from "@/components/layout/LocaleSwitch";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { ButtonLink, Container } from "@/components/ui";
-import { profile } from "@/content/profile";
 import { getT } from "@/i18n/getT";
 import type { Locale } from "@/i18n/settings";
-import { assetPath } from "@/lib/paths";
+import { getResume } from "@/lib/resume";
 
 type HeaderProps = {
   locale: Locale;
@@ -17,7 +16,7 @@ type HeaderProps = {
 export async function Header({ locale }: HeaderProps) {
   const t = await getT(locale, "common");
   const tActions = await getT(locale, "actions");
-  const resumeHref = assetPath(profile.resume[locale]);
+  const resume = getResume(locale);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md">
@@ -34,11 +33,17 @@ export async function Header({ locale }: HeaderProps) {
         <LocaleSwitch />
         <ThemeToggle />
         <div className="ms-2 hidden sm:block">
-          <ButtonLink href={resumeHref} download size="sm" icon={FiDownload}>
+          <ButtonLink
+            href={resume.href}
+            hrefLang={resume.locale}
+            download
+            size="sm"
+            icon={FiDownload}
+          >
             {tActions("downloadCv")}
           </ButtonLink>
         </div>
-        <MobileMenu locale={locale} resumeHref={resumeHref} />
+        <MobileMenu locale={locale} resume={resume} />
       </Container>
     </header>
   );

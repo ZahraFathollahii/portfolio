@@ -1,1 +1,149 @@
-{}
+{
+  "status": {
+    "active": "In active development",
+    "ganoticLaunch": "Since 2026"
+  },
+  "labels": {
+    "role": "My role",
+    "status": "Status",
+    "stack": "Tech stack",
+    "privateSource": "Source code is private"
+  },
+  "caseStudy": {
+    "context": "Context",
+    "scope": "My scope",
+    "decisions": "Key decisions",
+    "challenges": "What was hard",
+    "result": "Result",
+    "gallery": "Screenshots"
+  },
+  "mssp": {
+    "title": "MSSP",
+    "subtitle": "Managed Security Services Platform",
+    "category": "Cybersecurity",
+    "summary": "A managed security services platform with an installable PWA and data-visualisation views.",
+    "role": "Sole front-end developer · UI design",
+    "caseStudy": {
+      "context": "TODO",
+      "scope": "I was the only front-end developer on the project. I designed the full UI in Figma and built the entire front-end, including the installable PWA and the data-visualisation views.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "payesh": {
+    "title": "Payesh",
+    "subtitle": "Occupational Health Monitoring",
+    "category": "Occupational health",
+    "summary": "Multi-tenant, role-based dashboards for monitoring occupational health, with specialised medical forms.",
+    "role": "TODO",
+    "caseStudy": {
+      "context": "Payesh monitors occupational health for multiple organisations. It provides multi-tenant, role-based dashboards; specialised medical form modules — organ-specific evaluations, audiometry, spirometry and lab panels; and multi-step onboarding wizards with dynamic, cascading form logic.",
+      "scope": "TODO",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "picopet": {
+    "title": "PicoPet",
+    "subtitle": "Bilingual Veterinary Platform",
+    "category": "Veterinary",
+    "summary": "A bilingual veterinary platform for finding clinics and doctors, with visit history and role-based dashboards.",
+    "role": "TODO",
+    "caseStudy": {
+      "context": "PicoPet is a bilingual veterinary platform covering clinic and doctor discovery, visit history and role-based dashboards, with full RTL/LTR internationalisation.",
+      "scope": "TODO",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "salam-operator": {
+    "title": "Salam Operator",
+    "subtitle": "National Healthcare Platform",
+    "category": "Healthcare · Ministry of Health",
+    "summary": "A national healthcare platform for the Ministry of Health: telemedicine, appointment scheduling and patient records.",
+    "role": "TODO",
+    "caseStudy": {
+      "context": "Salam Operator is a national healthcare platform for Iran's Ministry of Health. It covers telemedicine screens, video and text appointment scheduling, and patient health records.",
+      "scope": "TODO",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "ganotic": {
+    "title": "Ganotic",
+    "subtitle": "Health & Wellness E-commerce",
+    "category": "Personal project · Founder",
+    "summary": "My own health and wellness store: a Next.js PWA storefront, a React admin panel and a shared component library.",
+    "role": "Founder · front-end & design",
+    "caseStudy": {
+      "context": "Ganotic is a health and wellness e-commerce business that I founded. This case study covers my front-end and design work only.",
+      "scope": "I designed and built the front-end of both apps: a Next.js storefront shipped as an installable, SEO-focused PWA with a fully RTL Persian UI, and a React admin panel. Both apps share a Tailwind component library built on design tokens.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "sepehr-pharmacy": {
+    "title": "Sepehr Online Pharmacy",
+    "subtitle": "Online pharmacy",
+    "category": "Healthcare · E-commerce",
+    "summary": "Redesigned the pharmacist and admin UIs, refactored legacy screens into reusable components and fixed ordering-flow defects.",
+    "role": "Joined mid-development"
+  },
+  "sepehr-salamat": {
+    "title": "Sepehr Salamat",
+    "subtitle": "Medical Centers Management",
+    "category": "Healthcare",
+    "summary": "Rebuilt the doctor, receptionist and patient panels as shared components, redesigned the UI and fixed defects.",
+    "role": "Joined mid-development"
+  }
+}

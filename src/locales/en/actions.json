@@ -8,5 +8,12 @@
     "open": "Open menu",
     "close": "Close menu"
   },
-  "backHome": "Back to home"
+  "backHome": "Back to home",
+  "getInTouch": "Get in touch",
+  "sendEmail": "Send an email",
+  "viewCaseStudy": "Read the case study",
+  "visitLiveSite": "Visit live site",
+  "previousProject": "Previous project",
+  "nextProject": "Next project",
+  "allProjects": "All projects"
 }

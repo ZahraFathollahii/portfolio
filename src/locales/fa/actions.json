@@ -8,5 +8,12 @@
     "open": "باز کردن منو",
     "close": "بستن منو"
   },
-  "backHome": "بازگشت به صفحه‌ی اصلی"
+  "backHome": "بازگشت به صفحه‌ی اصلی",
+  "getInTouch": "در تماس باشیم",
+  "sendEmail": "ارسال ایمیل",
+  "viewCaseStudy": "مطالعه‌ی جزئیات پروژه",
+  "visitLiveSite": "مشاهده‌ی نسخه‌ی آنلاین",
+  "previousProject": "پروژه‌ی قبلی",
+  "nextProject": "پروژه‌ی بعدی",
+  "allProjects": "همه‌ی پروژه‌ها"
 }

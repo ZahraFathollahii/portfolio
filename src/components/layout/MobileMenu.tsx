@@ -11,14 +11,15 @@ import type { Locale } from "@/i18n/settings";
 
 type MobileMenuProps = {
   locale: Locale;
-  resumeHref: string;
+  /** From getResume() — resolved at build time by the server parent. */
+  resume: { href: string; locale: Locale };
 };
 
 /**
  * Native modal <dialog>: showModal() makes the rest of the page inert (focus trap),
  * Esc closes it, and focus returns to the trigger on close.
  */
-export function MobileMenu({ locale, resumeHref }: MobileMenuProps) {
+export function MobileMenu({ locale, resume }: MobileMenuProps) {
   const { t } = useTranslation("common");
   const { t: tActions } = useTranslation("actions");
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -77,7 +78,8 @@ export function MobileMenu({ locale, resumeHref }: MobileMenuProps) {
             </ul>
           </nav>
           <ButtonLink
-            href={resumeHref}
+            href={resume.href}
+            hrefLang={resume.locale}
             download
             icon={FiDownload}
             className="mt-auto"

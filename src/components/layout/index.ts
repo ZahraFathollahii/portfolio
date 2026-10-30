@@ -6,5 +6,6 @@ export { ScrollProgress } from "@/components/layout/ScrollProgress";
 export { SectionRail } from "@/components/layout/SectionRail";
 export { SiteShell } from "@/components/layout/SiteShell";
 export { SkipLink } from "@/components/layout/SkipLink";
+export { SocialLinks, socialIcons } from "@/components/layout/SocialLinks";
 export { ThemeScript } from "@/components/layout/ThemeScript";
 export { ThemeToggle } from "@/components/layout/ThemeToggle";

@@ -1,1 +1,139 @@
 @import "tailwindcss";
+
+/*
+ * Design tokens.
+ * Raw values live in CSS variables scoped by [data-theme] and :lang(), so any subtree
+ * can switch theme/script. `@theme inline` exposes them as Tailwind utilities
+ * (bg-bg, text-muted, border-border, bg-accent, text-display, rounded-card, …).
+ */
+
+@theme inline {
+  --font-sans: var(--font-stack);
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: color-mix(in oklab, var(--accent) 14%, transparent);
+
+  --shadow-card: var(--shadow-card-value);
+
+  /* Type scale — leading/tracking switch per script (see :lang(fa) below). */
+  --text-display: clamp(2.75rem, 1.5rem + 5.5vw, 5.75rem);
+  --text-display--line-height: var(--leading-display);
+  --text-display--letter-spacing: var(--tracking-display);
+  --text-h2: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem);
+  --text-h2--line-height: var(--leading-heading);
+  --text-h2--letter-spacing: var(--tracking-heading);
+  --text-h3: 1.25rem;
+  --text-h3--line-height: var(--leading-heading);
+  --text-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-lead--line-height: var(--leading-body);
+
+  /* Small uppercase labels (eyebrows, categories). Zero in FA. */
+  --tracking-label: var(--tracking-label-value);
+}
+
+@theme {
+  --radius-control: 0.625rem;
+  --radius-card: 1rem;
+}
+
+/* Default theme: dark. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e0f12;
+  --surface: #16181d;
+  --border: #2a2e36;
+  --text: #edeef0;
+  --muted: #9ea4ae;
+  --accent: #f2b33d;
+  --accent-contrast: #16181c;
+  --dot: rgb(255 255 255 / 0.07);
+  --shadow-card-value:
+    0 1px 0 rgb(255 255 255 / 0.03) inset, 0 16px 32px -20px rgb(0 0 0 / 0.7);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --border: #e2e3de;
+  --text: #16181c;
+  --muted: #585e68;
+  --accent: #8f5300;
+  --accent-contrast: #ffffff;
+  --dot: rgb(0 0 0 / 0.08);
+  --shadow-card-value:
+    0 1px 2px rgb(0 0 0 / 0.04), 0 12px 28px -18px rgb(0 0 0 / 0.18);
+}
+
+/* Script-specific typography. Persian: no letter-spacing at all (breaks joining), taller leading. */
+:root {
+  --font-stack: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --leading-body: 1.65;
+  --leading-heading: 1.2;
+  --leading-display: 1.02;
+  --tracking-heading: -0.02em;
+  --tracking-display: -0.04em;
+  --tracking-label-value: 0.06em;
+}
+
+:lang(fa) {
+  /* Vazirmatn (Arabic-script subset) first; Latin glyphs fall through to Inter. */
+  --font-stack: var(--font-vazirmatn), var(--font-inter), Tahoma, sans-serif;
+  --leading-body: 1.9;
+  --leading-heading: 1.45;
+  --leading-display: 1.25;
+  --tracking-heading: 0;
+  --tracking-display: 0;
+  --tracking-label-value: 0;
+}
+
+@layer base {
+  /* Set on every [lang] element so nested locale subtrees pick up their own stack. */
+  [lang] {
+    font-family: var(--font-stack);
+    line-height: var(--leading-body);
+  }
+
+  body {
+    @apply bg-bg text-text antialiased;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-contrast);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility bg-dot-grid {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+}

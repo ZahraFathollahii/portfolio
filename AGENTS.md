@@ -42,6 +42,19 @@ Boring proven solutions. No over-engineering. Readability → scalability → pe
   Unwritten case-study content stays as clearly marked `TODO` translation values.
 - ❌ Do NOT create other GitHub repositories, change repo settings, push, or deploy without asking first. Local commits are fine.
 
+## UI conventions
+
+- Colors/radii/shadows/type only via tokens in `globals.css` (`bg-surface`, `text-muted`, `rounded-card`, `text-display`, …).
+  Themes switch with `[data-theme]`; scripts switch with `:lang(fa)` — no `dark:` variants.
+- No `tracking-*` on text that can be Persian (breaks letter joining) — use `tracking-label`, which is 0 in FA.
+- Mixed-script lists (e.g. "Front-End Developer · React · TypeScript") render as separate `dir="auto"` items in a
+  wrapping flex row, never as one concatenated string — bidi reorders separators on wrap.
+- Atomic Latin labels inside RTL (chips, tech names) get `dir="auto"` (built into `Chip`).
+- Directional icons (arrows) use `mirrorIcon` / `rtl:-scale-x-100`.
+- `cn()` only joins classes, no merging: `className` props add layout, never override variants.
+- Links that open a new tab take a translated `newTabHint` (screen-reader text); nothing else sets `target="_blank"`.
+- Numbers shown to users go through `formatNumber(value, locale)` (Persian digits in FA).
+
 ## Workflow
 
 - One phase at a time; small, reviewable commits (conventional commits).

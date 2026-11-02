@@ -5,12 +5,14 @@ import { profile } from "@/content/profile";
 import { defaultLocale, type Locale } from "@/i18n/settings";
 import { assetPath } from "@/lib/paths";
 
-/** Build-time only (Server Components): the locale's resume, or the EN one if that file doesn't exist. */
-export function getResume(locale: Locale): { href: string; locale: Locale } {
-  const fileLocale = existsSync(
-    join(process.cwd(), "public", profile.resume[locale]),
-  )
-    ? locale
-    : defaultLocale;
-  return { href: assetPath(profile.resume[fileLocale]), locale: fileLocale };
+/** Build-time only (Server Components): the locale's resume, else the EN one, else null if neither file exists. */
+export function getResume(
+  locale: Locale,
+): { href: string; locale: Locale } | null {
+  const fileLocale = [locale, defaultLocale].find((candidate) =>
+    existsSync(join(process.cwd(), "public", profile.resume[candidate])),
+  );
+  return fileLocale
+    ? { href: assetPath(profile.resume[fileLocale]), locale: fileLocale }
+    : null;
 }

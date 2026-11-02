@@ -3,6 +3,11 @@ name: Deploy to GitHub Pages
 on:
   # Manual only until the first successful launch.
   workflow_dispatch:
+    inputs:
+      skip_launch_check:
+        description: "Deploy even if launch content is missing"
+        type: boolean
+        default: false
   # Enable after launch to deploy every push to main:
   # push:
   #   branches: [main]
@@ -33,12 +38,14 @@ jobs:
       - run: yarn install --immutable
 
       # Fails while launch content is missing (email, resume PDF, role/scope TODOs).
-      - run: yarn launch:check
+      - if: ${{ !inputs.skip_launch_check }}
+        run: yarn launch:check
 
       - run: yarn build
 
       # Fails if any "TODO" text reached a generated page.
-      - run: yarn launch:check --built
+      - if: ${{ !inputs.skip_launch_check }}
+        run: yarn launch:check --built
 
       - uses: actions/upload-pages-artifact@v5
         with:

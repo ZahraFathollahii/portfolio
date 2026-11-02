@@ -32,17 +32,19 @@ export async function Header({ locale }: HeaderProps) {
         </Link>
         <LocaleSwitch />
         <ThemeToggle />
-        <div className="ms-2 hidden sm:block">
-          <ButtonLink
-            href={resume.href}
-            hrefLang={resume.locale}
-            download
-            size="sm"
-            icon={FiDownload}
-          >
-            {tActions("downloadCv")}
-          </ButtonLink>
-        </div>
+        {resume && (
+          <div className="ms-2 hidden sm:block">
+            <ButtonLink
+              href={resume.href}
+              hrefLang={resume.locale}
+              download
+              size="sm"
+              icon={FiDownload}
+            >
+              {tActions("downloadCv")}
+            </ButtonLink>
+          </div>
+        )}
         <MobileMenu locale={locale} resume={resume} />
       </Container>
     </header>

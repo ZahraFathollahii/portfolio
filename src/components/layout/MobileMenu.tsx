@@ -12,7 +12,7 @@ import type { Locale } from "@/i18n/settings";
 type MobileMenuProps = {
   locale: Locale;
   /** From getResume() — resolved at build time by the server parent. */
-  resume: { href: string; locale: Locale };
+  resume: { href: string; locale: Locale } | null;
 };
 
 /**
@@ -77,15 +77,17 @@ export function MobileMenu({ locale, resume }: MobileMenuProps) {
               ))}
             </ul>
           </nav>
-          <ButtonLink
-            href={resume.href}
-            hrefLang={resume.locale}
-            download
-            icon={FiDownload}
-            className="mt-auto"
-          >
-            {tActions("downloadCv")}
-          </ButtonLink>
+          {resume && (
+            <ButtonLink
+              href={resume.href}
+              hrefLang={resume.locale}
+              download
+              icon={FiDownload}
+              className="mt-auto"
+            >
+              {tActions("downloadCv")}
+            </ButtonLink>
+          )}
         </div>
       </dialog>
     </>

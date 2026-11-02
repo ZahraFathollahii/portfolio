@@ -90,14 +90,16 @@ export async function Hero({ locale }: HeroProps) {
             <li>{t("hero.remote")}</li>
           </ul>
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <ButtonLink
-              href={resume.href}
-              hrefLang={resume.locale}
-              download
-              icon={FiDownload}
-            >
-              {tActions("downloadCv")}
-            </ButtonLink>
+            {resume && (
+              <ButtonLink
+                href={resume.href}
+                hrefLang={resume.locale}
+                download
+                icon={FiDownload}
+              >
+                {tActions("downloadCv")}
+              </ButtonLink>
+            )}
             <ButtonLink href="#contact" variant="secondary" icon={FiArrowDown}>
               {tActions("getInTouch")}
             </ButtonLink>

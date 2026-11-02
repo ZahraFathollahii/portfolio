@@ -7,7 +7,8 @@ export const profile = {
   /** Shown next to the role in the hero, as separate items. */
   headlineTechs: ["React", "TypeScript", "Tailwind CSS"],
   /**
-   * Per-locale resume. A missing file falls back to the EN one at build time (see lib/resume.ts).
+   * Per-locale resume. A missing file falls back to the EN one at build time (see lib/resume.ts);
+   * "Download CV" stays hidden if that doesn't exist either.
    * TODO(resume): EN PDF not provided yet — public/resume/.
    */
   resume: {

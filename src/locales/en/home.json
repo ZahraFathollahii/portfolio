@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "role": "Front-End Developer",
+    "intro": "Building responsive, intuitive and production-ready user interfaces. Currently working on real-world web applications with React, Next.js, TypeScript, JavaScript (ES6+) and modern component-based architecture.",
+    "location": "Tehran, Iran",
+    "remote": "Open to remote",
+    "available": "Available for opportunities",
+    "photoAlt": "Portrait of Zahra Fathollahi",
+    "founderBadge": "Founder @ Ganotic.ir",
+    "founderDesc": "Online store for natural wellness products with Next.js PWA & React admin",
+    "healthcareBadge": "Enterprise Healthcare Platforms",
+    "healthcareDesc": "Developing national-scale telemedicine, MSSP & occupational health systems",
+    "craftBadge": "Figma Design to Production",
+    "craftDesc": "UI/UX design in Figma, bespoke design systems & responsive architecture"
+  },
+  "about": {
+    "title": "About",
+    "p1": "Front-End Developer at Pardazeshgaran Sepehr in Tehran since 2023, and Founder of Ganotic — an online store for natural wellness products. I focus on building scalable, responsive and maintainable user interfaces with React, TypeScript and component-driven architecture.",
+    "p2": "Comfortable across the entire product lifecycle — from Figma wireframes and UI/UX design to robust front-end implementation, design systems, and seamless state management. Passionate about clean code, performance, and continuous learning.",
+    "p3": "Before full-time front-end engineering, I spent two years teaching robotics and programming to students from elementary to high school and judging national robotics competitions at the University of Tehran. I hold an M.Sc. in Software Engineering (2026) with a thesis on agent-based architecture for smart environments, and completed my B.Sc. in 3.5 years."
+  },
+  "skills": {
+    "title": "Skills",
+    "production": "Use in production",
+    "learningTitle": "Currently learning",
+    "learning": {
+      "advancedReact": "Advanced React patterns & performance",
+      "testing": "Unit & component testing",
+      "architecture": "Modern front-end architecture"
+    }
+  },
+  "work": {
+    "title": "Selected work",
+    "moreTitle": "More work"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My journey architecting high-scale enterprise platforms, from founding a web product to mission-critical healthcare systems.",
+    "focusTitle": "Core Engineering Focus",
+    "focusDesc": "Building scalable React & TypeScript front-ends, complex RBAC authorization flows, real-time data streaming, and accessible design systems.",
+    "present": "Present",
+    "locations": {
+      "tehran": "Tehran"
+    },
+    "sepehr": {
+      "company": "Pardazeshgaran Sepehr",
+      "frontend": {
+        "title": "Front-End Developer",
+        "description": "Built multiple internal and client-facing web applications with React, TypeScript, Tailwind CSS and Ant Design, and took part in the UI/UX design process using Figma. Developing scalable national-scale platforms across telemedicine, occupational health monitoring, and clinic management."
+      },
+      "intern": {
+        "title": "Front-End Developer Intern",
+        "description": "Three-month front-end internship focused on React and Redux fundamentals, then transitioned into a full-time role on production UI projects."
+      }
+    },
+    "sigma": {
+      "company": "SIGMA Educational Company",
+      "instructor": {
+        "title": "Robotics Instructor",
+        "description": "Taught robotics and programming to students from elementary to high school in group classes and one-on-one sessions. Designed hands-on workshops with Arduino, mBlock, Scratch and basic electronics, and served as a judge at national robotics competitions held at the University of Tehran."
+      }
+    },
+    "bookGarden": {
+      "company": "Book Garden Robotics Club",
+      "intern": {
+        "title": "Robotics Intern",
+        "description": "Designed and tested electronic circuit boards with Altium Designer, and worked hands-on with SolidWorks, Arduino, Scratch and mBlock."
+      }
+    }
+  },
+  "research": {
+    "title": "Research & education",
+    "thesis": {
+      "label": "M.Sc. thesis",
+      "title": "Designing a Pervasive Agent-Based System for the Smart School Environment",
+      "summary": "A multi-agent, edge-oriented architecture for a smart school — documented with the 4+1 view model, evaluated with ATAM and formally verified through CSP model checking in PAT."
+    },
+    "degrees": {
+      "msc": {
+        "degree": "M.Sc. Software Engineering",
+        "school": "Islamic Azad University, Science and Research Branch",
+        "year": "2026"
+      },
+      "bsc": {
+        "degree": "B.Sc. Software Engineering",
+        "school": "Islamic Azad University, West Tehran Branch",
+        "note": "Completed in 3.5 years"
+      },
+      "gpa": "GPA {{value}} / {{scale}}"
+    },
+    "languages": {
+      "title": "Languages",
+      "fa": "Persian",
+      "faLevel": "Native",
+      "en": "English",
+      "enLevel": "Professional"
+    },
+    "personal": {
+      "title": "Personal Details",
+      "locationLabel": "Location",
+      "locationValue": "Tehran, Iran",
+      "availabilityLabel": "Status",
+      "availabilityValue": "Available for opportunities",
+      "workModeLabel": "Work Mode",
+      "workModeValue": "Remote & On-site"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "body": "Always open to exciting front-end roles, creative collaborations, or discussing ambitious digital products. Reach out directly through any of the channels below:",
+    "emailLabel": "Direct Email",
+    "phoneLabel": "Phone & WhatsApp",
+    "linkedinLabel": "LinkedIn",
+    "projectsLabel": "Code & Startup"
+  }
+}

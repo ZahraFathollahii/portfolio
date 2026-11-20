@@ -1,0 +1,30 @@
+# Zahra Fathollahi — Technical Profile & Portfolio
+> Front-End Developer specializing in scalable React & TypeScript component architecture, design systems, and responsive web applications.
+
+## Summary
+- Name: Zahra Fathollahi (زهرا فتح‌اللهی)
+- Role: Front-End Developer & Founder
+- Location: Tehran, Iran (Remote-ready)
+- Portfolio: https://zahrafathollahi.ir
+- GitHub: https://github.com/ZahraFathollahii
+- LinkedIn: https://www.linkedin.com/in/zahra-fathollahi
+- Founder Project: Ganotic (https://ganotic.ir)
+
+## Core Stack & Engineering Focus
+- Frameworks & UI: React, Next.js (App Router), TypeScript, Vite
+- Styling & Systems: Tailwind CSS v4, CSS Tokens, Responsive UI, Full RTL/LTR Parity, Figma
+- State & Data: Redux Toolkit, TanStack Query
+- Testing & Quality: Vitest, React Testing Library, Web Accessibility (WCAG AA), Semantic HTML
+- Performance: Core Web Vitals optimization, static site generation (SSG), minimal bundle size
+
+## Key Systems & Projects
+- Ganotic: https://ganotic.ir
+  - Founder & Lead Front-End/Design.
+  - Health & wellness e-commerce PWA built with Next.js, React admin dashboard, and shared design system tokens.
+- MSSP (Health Surveillance System): https://mssp.inhso.ir
+  - Progressive Web App (PWA) supporting epidemiology workflows and offline capabilities.
+  - Complex interactive data visualizations and charts built with Recharts.
+- Payesh (National Healthcare Analytics Dashboard): https://payesh.inhso.ir
+  - Large-scale national analytics platform handling high-density data tables and advanced state management.
+- PicoPet: https://picopet.ir
+  - Fluid, responsive e-commerce application with modern cart interactions and high performance.

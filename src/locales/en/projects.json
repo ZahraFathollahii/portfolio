@@ -1,0 +1,149 @@
+{
+  "status": {
+    "ganoticLaunch": "Since 2026"
+  },
+  "labels": {
+    "role": "My role",
+    "status": "Status",
+    "stack": "Tech stack",
+    "privateSource": "Source code is private",
+    "projectNavigation": "Project navigation"
+  },
+  "caseStudy": {
+    "context": "Context",
+    "scope": "My scope",
+    "decisions": "Key decisions",
+    "challenges": "What was hard",
+    "result": "Result",
+    "gallery": "Screenshots"
+  },
+  "mssp": {
+    "title": "MSSP",
+    "subtitle": "Managed Security Services Platform",
+    "category": "Cybersecurity",
+    "summary": "A managed security services platform with an installable PWA and data-visualisation views.",
+    "role": "Sole front-end developer · UI design",
+    "caseStudy": {
+      "context": "TODO",
+      "scope": "I was the only front-end developer on the project. I designed the full UI in Figma and built the entire front-end, including the installable PWA and the data-visualisation views.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "payesh": {
+    "title": "Payesh",
+    "subtitle": "Occupational Health Monitoring System",
+    "category": "Occupational health · Enterprise",
+    "summary": "Multi-tenant enterprise platform featuring granular RBAC controls, 30+ specialized clinical examination form modules, and corporate health contract management.",
+    "role": "Front-End Developer",
+    "caseStudy": {
+      "context": "Payesh is an enterprise occupational health monitoring platform connecting national corporations to certified occupational medical clinics with precise role-based access control.",
+      "scope": "Engineered 30+ specialized medical examination form modules (audiometry, spirometry, organ-specific evaluations, lab panels) using Redux Toolkit for cross-form state persistence, dynamic onboarding wizards, and SMS verification.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "picopet": {
+    "title": "PicoPet",
+    "subtitle": "Bilingual Veterinary Healthcare Platform",
+    "category": "Veterinary healthcare",
+    "summary": "Bilingual (Persian/English) portal connecting pet owners with veterinarians: online appointment booking, digital prescriptions, vaccination tracking, and invoicing.",
+    "role": "Front-End Developer",
+    "caseStudy": {
+      "context": "PicoPet is a comprehensive veterinary platform streamlining clinic discovery, specialist appointments, and pet medical history.",
+      "scope": "Implemented clinic and veterinarian discovery modules, visit history, invoice workflows, role-based dashboards, and full RTL/LTR bilingual parity.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "salam-operator": {
+    "title": "Salam Operator",
+    "subtitle": "Ministry of Health National Healthcare Platform",
+    "category": "National healthcare · Ministry of Health",
+    "summary": "Official national health operator platform under the Ministry of Health: online telemedicine consultations, appointment scheduling, and integrated patient health records.",
+    "role": "Front-End Developer",
+    "caseStudy": {
+      "context": "Salam Operator is one of Iran's three official national healthcare operators under the Ministry of Health, providing national telemedicine and appointment infrastructure.",
+      "scope": "Engineered front-end interfaces for telemedicine consultations, video and text appointment booking, patient health record views, and REST integration for real-time patient synchronization at national scale.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "ganotic": {
+    "title": "Ganotic",
+    "subtitle": "Health & Wellness E-Commerce Platform",
+    "category": "Personal project · Founder",
+    "summary": "Production health platform featuring a Next.js PWA storefront, custom React admin panel, unified design system, and strict SEO & accessibility standards.",
+    "role": "Founder · Product Designer & Front-End Developer",
+    "caseStudy": {
+      "context": "Ganotic is a specialized e-commerce brand and web platform in wellness and organic supplements, conceived, designed and engineered from scratch.",
+      "scope": "Designed design system in Figma and built front-ends for both apps: an installable Next.js PWA storefront with Persian RTL and high SEO score, and a React admin panel featuring order management, catalog filters, and payment gateway integration.",
+      "decisions": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        },
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "challenges": "TODO",
+      "result": "TODO"
+    }
+  },
+  "sepehr-pharmacy": {
+    "title": "Sepehr Online Pharmacy",
+    "subtitle": "Inventory & Order Management Portal",
+    "category": "Healthtech · Pharmacy",
+    "summary": "Drug inventory tracking with expiration management, multi-insurance prescription processing, and real-time WebSocket order delivery across active branches.",
+    "role": "Front-End Developer"
+  },
+  "sepehr-salamat": {
+    "title": "Sepehr Salamat",
+    "subtitle": "Comprehensive Medical Office System",
+    "category": "Healthtech · Medical Office",
+    "summary": "Insurance-supported prescription workflows, online scheduling, and comprehensive patient records with dedicated high-performance panels for doctors, receptionists, and patients.",
+    "role": "Front-End Developer"
+  }
+}
